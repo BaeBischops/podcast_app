@@ -1,1 +1,1 @@
-import 'load.js'
+import 'src/js/load.js'
