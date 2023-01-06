@@ -1,5 +1,5 @@
 document.querySelector('#main').innerHTML = /*html*/ `
-                                            <section id="app" class="row">
+                                            <section id="app">
                                                 <div class="centre">
                                                 <div class="load"></div>
                                                 <span>loading content...</span>
@@ -27,14 +27,17 @@ const getShows = async () => {
         seasons = seasons + season;
 
         shows = /*html*/`${shows}
-                <div class="col-lg-6 col-md-3 col-sm-12">
                     <div class="listener">
                         <h2 class="title-tile">${title}</h2>
                         <p class="descripton-tile"><img src='${image}' width="300" height="300" class="image-tile" data-preview-button="${id}">Seasons: ${seasons} <br> Last Update: ${updated} <br> Genres: ${genres} <br><br> ${ description.slice(0, 100)}</p>
-                    </div>
-                </div>`
+                    </div>`
     }
-    app.innerHTML = shows;
+    app.innerHTML = /*html*/`
+                    <select>
+                        <option>Default</option>
+                        <option>Ascending</option>
+                        <option>Descending</option>
+                    </select> ${shows}`;
     
     
 };
@@ -56,19 +59,21 @@ const getSeasons = async (id) => {
     for(const {image, title, seasons, description, episodes} of data.seasons){
         let episode = episodes.length;
 
-        seasonList = /*html*/`${seasonList}
-                    <div class="col-lg-4 col-md-3 col-sm-12">
+        seasonList = /*html*/`${seasonList}  
                         <div class="listener">
                             <h2 class="title-tile">${title}</h2>
                             <img src='${image}' width="200" height="200" class="image-tile">
                             <p>Episodes: ${episode} <br> ${data.description.slice(0, 100)}</p>
-                        </div>
-                    </div>`
+                        </div>`
     }
-    app.innerHTML = seasonList;
+    app.innerHTML = /*html*/`
+                    <button data-button-back>Previous</button>${seasonList}
+                    <button data-button-back>Previous</button>`;
 };
 
 app.addEventListener('click', (e) => {
-    const { previewButton } = e.target.dataset;
+    const { previewButton, buttonBack } = e.target.dataset;
     getSeasons(previewButton);
+
+    if(buttonBack === ''){getShows()}
 });
