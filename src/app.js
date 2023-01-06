@@ -1,3 +1,10 @@
+document.querySelector('#main').innerHTML = /*html*/ `
+                                            <section id="app" class="row">
+                                                <div class="centre">
+                                                <div class="load"></div>
+                                                <span>loading content...</span>
+                                                </div>
+                                            </section>`;
 const app = document.querySelector('#app'); //app = listHtml
 
 const getShows = async () => {
@@ -10,13 +17,31 @@ const getShows = async () => {
         return
     }
 
-    for(const {id, title, seasons} of data){
-        shows = /*html*/`${shows} <button data-preview-button='${id}'>${title}</button>`
+    for(let {id, title, seasons, image, description, updated, genres} of data){
+        let season = seasons>1? " Seasons ":" Season ";
+        updated = new Date(updated);
+        let year = updated.getFullYear();
+        let month = updated.getMonth()+1; 
+        let day = updated.getDate();
+        updated = year + "/" + month + "/" + day;
+        seasons = seasons + season;
+
+        shows = /*html*/`${shows}
+                <div class="col-lg-6 col-md-3 col-sm-12">
+                    <div class="listener">
+                        <h2 class="title-tile">${title}</h2>
+                        <p class="descripton-tile"><img src='${image}' width="300" height="300" class="image-tile" data-preview-button="${id}">Seasons: ${seasons} <br> Last Update: ${updated} <br> Genres: ${genres} <br><br> ${ description.slice(0, 100)}</p>
+                    </div>
+                </div>`
     }
     app.innerHTML = shows;
+    
+    
 };
 
 getShows();
+
+
 
 const getSeasons = async (id) => {
     const response = await fetch(`https://podcast-api.netlify.app/id/${id}`);
@@ -28,15 +53,22 @@ const getSeasons = async (id) => {
         return
     }
 
-    for(const {image, title} of data.seasons){
-        seasonList = /*html*/`${seasonList} <li><img src='${image}' width='100' height='100'>${title}</li>`
+    for(const {image, title, seasons, description, episodes} of data.seasons){
+        let episode = episodes.length;
+
+        seasonList = /*html*/`${seasonList}
+                    <div class="col-lg-4 col-md-3 col-sm-12">
+                        <div class="listener">
+                            <h2 class="title-tile">${title}</h2>
+                            <img src='${image}' width="200" height="200" class="image-tile">
+                            <p>Episodes: ${episode} <br> ${data.description.slice(0, 100)}</p>
+                        </div>
+                    </div>`
     }
-    app.innerHTML = /*html*/`<h2>${data.title}</h2> <ul>${seasonList}</ul>`;
+    app.innerHTML = seasonList;
 };
 
-document.body.addEventListener('click', (event) => {
-    const {previewButton} = event.target.dataset;
-    if(!previewButton){app.innerHTML = /*html*/ `<h2>ERROR</h2>`;}
-    app.innerHTML = /*html*/ `<div class="centre"><div class="load"></div><span>loading content...</span></div>`;
-    getSeasons(previewButton)
+app.addEventListener('click', (e) => {
+    const { previewButton } = e.target.dataset;
+    getSeasons(previewButton);
 });
