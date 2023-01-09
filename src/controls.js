@@ -1,5 +1,5 @@
 import { html, LitElement, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
-import { store, connect } from '../store.js'
+import { store, connect } from '/store.js'
 
 class Component extends LitElement {
     static get properties() {
@@ -49,4 +49,4 @@ class Component extends LitElement {
     }
 }
 
-customElements.define('controls', Component)
+customElements.define('pd-co', Component) 

@@ -4,6 +4,7 @@ class Store {
             sorting: newSorting
         })
     }
+
     changeSearch(newSearch) {
         this.update({
             search: newSearch
@@ -14,7 +15,7 @@ class Store {
         if (this.state.previews.length > 0) {
             return this.update({
                 single: null,
-                phase: 'list'
+                phase: 'list',
             })
         }
 
@@ -57,6 +58,7 @@ class Store {
             single: data
         })
     }
+
     update(newState) {
         const prevState = { ...this.state }
         const nextState = { ...prevState, ...newState }
@@ -67,6 +69,7 @@ class Store {
 
         this.state = nextState
     }
+
     subscribe(newSubscription) {
         if (this.subscriptions.includes(newSubscription)) {
             throw new Error('Subscription already exist')
@@ -75,6 +78,7 @@ class Store {
         this.subscriptions.push(newSubscription)
         return { ...this.state }
     }
+
     unsubscribe(newSubscription) {
         if (!this.subscriptions.includes(newSubscription)) {
             throw new Error('Subscription does not exist')
@@ -85,7 +89,9 @@ class Store {
     }
 
     constructor() {
+       
         this.subscriptions = []
+
         this.state = {
             phase: 'loading',
             previews: [],
@@ -96,6 +102,7 @@ class Store {
         this.loadList()
     }
 }
+
 export const connect = (fn) => {
     const state = store.subscribe(fn)
     fn(state)

@@ -1,79 +1,91 @@
-document.querySelector('#main').innerHTML = /*html*/ `
-                                            <section id="app">
-                                                <div class="centre">
-                                                <div class="load"></div>
-                                                <span>loading content...</span>
-                                                </div>
-                                            </section>`;
-const app = document.querySelector('#app'); //app = listHtml
+import { html, css, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
+import { connect } from '/store.js'
 
-const getShows = async () => {
-    const response = await fetch('https://podcast-api.netlify.app/shows');
-    const data = await response.json();
-    let shows = '';
 
-    if(!response.ok){
-        app.innerHTML = /*html*/ `<h2>ERROR 404</h2>`;
-        return
+class Component extends LitElement {
+    static get properties() {
+        return {
+            phase: { state: true },
+        }
     }
 
-    for(let {id, title, seasons, image, description, updated, genres} of data){
-        let season = seasons>1? " Seasons ":" Season ";
-        updated = new Date(updated);
-        let year = updated.getFullYear();
-        let month = updated.getMonth()+1; 
-        let day = updated.getDate();
-        updated = year + "/" + month + "/" + day;
-        seasons = seasons + season;
+    constructor() {
+        super()
 
-        shows = /*html*/`${shows}
-                    <div class="listener">
-                        <h2 class="title-tile">${title}</h2>
-                        <p class="descripton-tile"><img src='${image}' width="300" height="300" class="image-tile" data-preview-button="${id}">Seasons: ${seasons} <br> Last Update: ${updated} <br> Genres: ${genres} <br><br> ${ description.slice(0, 100)}</p>
-                    </div>`
+        this.disconnectStore = connect((state) => {
+            if (this.phase === state.phase) return
+            this.phase = state.phase
+        })
     }
-    app.innerHTML = /*html*/`
-                    <select>
-                        <option>Default</option>
-                        <option>Ascending</option>
-                        <option>Descending</option>
-                    </select> ${shows}`;
+
+    disconnectedCallback() { this.disconnectStore() }
     
-    
-};
-
-getShows();
-
-
-
-const getSeasons = async (id) => {
-    const response = await fetch(`https://podcast-api.netlify.app/id/${id}`);
-    const data = await response.json();
-    let seasonList = '';
-
-    if(!response.ok){
-        app.innerHTML = /*html*/ `<h2>ERROR 404</h2>`;
-        return
+    static styles = css`
+    .centre {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
     }
-
-    for(const {image, title, seasons, description, episodes} of data.seasons){
-        let episode = episodes.length;
-
-        seasonList = /*html*/`${seasonList}  
-                        <div class="listener">
-                            <h2 class="title-tile">${title}</h2>
-                            <img src='${image}' width="200" height="200" class="image-tile">
-                            <p>Episodes: ${episode} <br> ${data.description.slice(0, 100)}</p>
-                        </div>`
+    .load {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation: ring 2s linear infinite;
     }
-    app.innerHTML = /*html*/`
-                    <button data-button-back>Previous</button>${seasonList}
-                    <button data-button-back>Previous</button>`;
-};
+    @keyframes ring {
+        0% {
+            transform: rotate(0deg);
+            box-shadow: 1px 5px 2px rgb(255, 255, 255);
+        }
+        50% {
+            transform: rotate(180deg);
+            box-shadow: 1px 5px 2px rgb(0, 0, 255);
+        }
+        100% {
+            transform: rotate(360deg);
+            box-shadow: 1px 5px 2px rgb(230, 0, 0);
+        }
+    }
+    span{
+        text-transform: uppercase;
+        animation: text 3s ease-in-out infinite;
+    }
+    @keyframes text {
+        50% {
+            color: black;
+        }
+    }
+    .load:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }`
 
-app.addEventListener('click', (e) => {
-    const { previewButton, buttonBack } = e.target.dataset;
-    getSeasons(previewButton);
+    render() {
+        switch (this.phase) {
+            case 'loading': 
+                return html`<section ><div class="centre"><div class="load"></div><span>loading content...</span></div></section>`
 
-    if(buttonBack === ''){getShows()}
-});
+            case 'error': 
+                return html`<div>Failed to Load!</div>`
+
+            case 'list': 
+                return html`<pd-li></pd-li>`
+
+            case 'single': 
+                return html`<pd-si></pd-si>`
+                
+            default: throw new Error('Invalid phase')
+        }
+    }
+}
+
+customElements.define('pd-app', Component)

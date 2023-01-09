@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
-import { store, connect } from '../store.js'
+import { store, connect } from '/store.js'
 
 class Component extends LitElement {
     static get properties() {
@@ -26,31 +26,35 @@ class Component extends LitElement {
 
         const backHandler = () => store.loadList()
 
-        const seasons = show.seasons.map(({ episodes, title }) => {
+        const seasons = show.seasons.map(({ episodes, title, image }) => {
+            let episode = episodes.length
             return html`
-                <div>
-                    <strong>${title}</strong>
-                    ${episodes.map(({ file, title: innerTitle }) => {
-                        return html`
-                            <div>
-                                <div>${innerTitle}</div>
-                                <audio controls>
-                                    <source src="https://file-examples.com/storage/fe8c7eef0c6364f6c9504cc/2017/11/file_example_MP3_700KB.mp3" type="audio/mp3">
-                                </audio>
-                            </div>
-                        `
-                    })}
-                </div>
+            <div class="listener">
+                <h2 class="title-tile">${title}</h2>
+                <p>Episodes: ${episode}</p>
+                <img src='${image}' width="200" height="200" class="image-tile">
+                ${episodes.map(({ file, title: innerTitle }) => {
+                    return html`
+                        <div>
+                            <div>${innerTitle}</div>
+                            <audio controls>
+                                <source src="${file}" type="audio/mp3">
+                            </audio>
+                        </div>
+                    `
+                })}
+            </div>
             `
         })
 
         return html`
-            <button @click="${backHandler}">👈 BACK</button>
+            <button @click="${backHandler}"> Previous </button>
             <h1>${show.title || ''}</h1>
-            <img src="${show.image}">
             ${seasons}
+            
         `
     }
 }
 
-customElements.define('podcast-view-single', Component)
+customElements.define('pd-si', Component)
+

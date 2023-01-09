@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js'
-import { store, connect } from '../store.js'
+import { store, connect } from '/store.js'
 
 const MONTHS = [
     'Jan',
@@ -38,9 +38,26 @@ class Component extends LitElement {
     disconnectedCallback() { this.disconnectStore() }
 
     static styles = css`
-        li {
-            border: 1px solid var(--primary-blue);
-        }
+    .listener{
+        margin: 25px 50px 75px 100px;
+        background-color: rgb(0, 0, 0); 
+        clear: both;
+        display: table;
+        color: white;
+    }
+    .title-tile{
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .descripton-tile{
+        text-align: justify
+    }
+    .image-tile{
+        float: left;
+        border-style: 1px solid white;
+        margin: 0px 15px 15px 0px;
+    }
     `;
 
     render() {
@@ -65,30 +82,30 @@ class Component extends LitElement {
             throw new Error('Invalid sorting')
          })
 
-        const list = sortedPreviews.map(({ title, id, updated }) => {
-            const date = new Date(updated)
-            const day = date.getDate()
-            const month = MONTHS[date.getMonth() - 1]
-            const year = date.getFullYear()
+        const list = sortedPreviews.map(({ title, id, updated, image, seasons, genres, description }) => {
+
+            let season = seasons>1? " Seasons ":" Season ";
+            updated = new Date(updated);
+            let year = updated.getFullYear();
+            let month = updated.getMonth()+1; 
+            let day = updated.getDate();
+            updated = year + "/" + month + "/" + day;
+            seasons = seasons + season;
 
             const clickHandler = () => store.loadSingle(id)
 
             return html`
-                <li>
-                    <button @click="${clickHandler}">
-                        ${title}
-                    </button>
-                    <div>Updated: ${day} ${month} ${year}</div>
-                </li>
-            `
+            <div class="listener">
+                <h2 class="title-tile">${title}</h2>
+                <p class="descripton-tile"><img src='${image}' width="300" height="300" class="image-tile" @click="${clickHandler}">Seasons: ${seasons} <br> Last Update: ${updated} <br> Genres: ${genres} <br><br> ${ description }</p>
+            </div>`
         })
 
         return html`
-            <h1>Podcast List</h1>
-            <podcast-controls></podcast-controls>
+            <pd-co></pd-co>
             ${list.length > 0 ? html`<ul>${list}</ul>` : html`<div>No matches</div>`}
         `
     }
 }
 
-customElements.define('podcast-view-list', Component)
+customElements.define('pd-li', Component)
