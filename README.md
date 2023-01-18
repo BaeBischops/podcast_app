@@ -1,5 +1,5 @@
 # podcast_project
-coding a podcast player with vanilla js
+coding a podcast player with JS OOP
 This app fetches the data from an [API by Schalk](https://github.com/schalkventer/example-podcast-api), then displays the stories in seasons.
 
 ## Author
