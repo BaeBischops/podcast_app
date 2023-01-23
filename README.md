@@ -6,4 +6,4 @@ This app fetches the data from an [API by Schalk](https://github.com/schalkvente
 Bekezulu A. Bischops
 
 ## Demo
-The app is deployed using github.io at [Podcast Link](https://baebischops.github.io/podcast_project/)
+The app is deployed using github.io at [Podcast Link](https://baebischops.github.io/podcast_app/)
