@@ -33,6 +33,6 @@ header .side-menu, .podcast-menu {
     border: 1px solid #fff;
 }
 
-.podcast-menu {
+header .podcast-menu {
     width: 75%;
 }
