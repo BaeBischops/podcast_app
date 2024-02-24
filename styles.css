@@ -120,10 +120,18 @@ header .side-menu .song-menu {
 }
 
 header .side-menu .song-menu li {
+    position: relative;
     list-style: none;
     padding: 5px 0 5px 20px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+header .side-menu .song-menu li:hover {
+    background: #6969aa1a;
 }
 
 header .side-menu .song-menu li span {
@@ -143,7 +151,14 @@ header .side-menu .song-menu li h5 {
     margin-left: 15px;
 }
 
-header .side-menu .song-menu li .subtitle {
+header .side-menu .song-menu li h5 .subtitle {
     font-size: 9px;
     color: #4c5262;
+}
+
+header .side-menu .song-menu li .bi {
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    font-size: 16px;
 }
