@@ -122,5 +122,12 @@ header .side-menu .song-menu {
 header .side-menu .song-menu li {
     list-style: none;
     padding: 5px 0 5px 20px;
+    display: flex;
+    align-items: center;
+}
 
+header .side-menu .song-menu li span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4c5262;
 }
