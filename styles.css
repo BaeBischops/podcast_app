@@ -22,23 +22,30 @@ body {
 /* --------------------- the header section --------------------- */
 header {
     display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
     border: 1px solid #fff;
     width: 85%;
     height: 95%;
 }
+
 header .side-menu, .podcast-menu {
     position: relative;
     height: 90%;
     width: 25%;
-    border: 1px solid #fff;
+    background: #111727;
+    box-shadow: 5px 0 2px #090f1f;
     flex-wrap: wrap;
 }
 
 header .podcast-menu {
     width: 75%;
+    background: #0b1320;
 }
 
 header .play-menu {
     width: 100%;
     height: 10%;
+    background: #111727;
+    box-shadow: 0 3px 8px #090f1f;
 }
