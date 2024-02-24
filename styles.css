@@ -49,3 +49,9 @@ header .play-menu {
     background: #111727;
     box-shadow: 0 3px 8px #090f1f;
 }
+
+header .side-menu h1 {
+    font-size: 20px;
+    margin: 15px 0 0 20px;
+    font-weight: 500;
+}
