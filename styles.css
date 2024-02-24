@@ -161,3 +161,35 @@ header .side-menu .song-menu li .bi {
     top: 6px;
     font-size: 16px;
 }
+
+header .play-menu {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .play-menu .wave {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    padding: 5px;
+    display: flex;
+    align-items: flex-end;
+}
+
+header .play-menu .wave .wave-1 {
+    width: 3px;
+    height: 10px;
+    margin-right: 3px;
+    border-radius: 10px 10px 0 0;
+    background: #36e2ec;
+    animation: wave 2s linear infinite;
+}
+
+header .play-menu .wave .wave-1:nth-child(2){
+    height: 15px;
+}
+
+header .play-menu .wave .wave-1:nth-child(3){
+    height: 5px;
+}
