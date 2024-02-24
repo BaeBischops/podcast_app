@@ -94,3 +94,20 @@ header .side-menu .playlist h4 span::before {
 header .side-menu .playlist h4:hover span::before {
     border: 2px solid #ffffff;
 }
+
+header .side-menu .playlist h4 .bi {
+    display: none;
+}
+
+header .side-menu .playlist .active {
+    color: #36e2ec;
+}
+
+header .side-menu .playlist .active span {
+    display: none;
+}
+
+header .side-menu .playlist .active .bi {
+    display: flex;
+}
+
