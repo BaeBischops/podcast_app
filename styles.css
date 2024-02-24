@@ -109,5 +109,6 @@ header .side-menu .playlist .active span {
 
 header .side-menu .playlist .active .bi {
     display: flex;
+    margin-right: 20px;
 }
 
