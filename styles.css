@@ -31,8 +31,14 @@ header .side-menu, .podcast-menu {
     height: 90%;
     width: 25%;
     border: 1px solid #fff;
+    flex-wrap: wrap;
 }
 
 header .podcast-menu {
     width: 75%;
+}
+
+header .play-menu {
+    width: 100%;
+    height: 10%;
 }
