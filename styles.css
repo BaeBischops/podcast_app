@@ -137,3 +137,13 @@ header .side-menu .song-menu li img {
     height: 32px;
     margin-left: 25px;
 }
+
+header .side-menu .song-menu li h5 {
+    font-size: 11px;
+    margin-left: 15px;
+}
+
+header .side-menu .song-menu li .subtitle {
+    font-size: 9px;
+    color: #4c5262;
+}
