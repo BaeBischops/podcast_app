@@ -55,3 +55,42 @@ header .side-menu h1 {
     margin: 15px 0 0 20px;
     font-weight: 500;
 }
+
+header .side-menu .playlist {
+    margin: 40px 0 0 20px;
+}
+
+header .side-menu .playlist h4 {
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    color: #4c5262;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: .3s linear;
+}
+
+header .side-menu .playlist h4:hover {
+    color: #ffffff;
+}
+
+header .side-menu .playlist h4 span {
+    position: relative;
+    margin-right: 35px;
+}
+
+header .side-menu .playlist h4 span::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border: 2px solid #4c5262;
+    border-radius: 50%;
+    top: -4px;
+    transition: .3s linear;
+}
+
+header .side-menu .playlist h4:hover span::before {
+    border: 2px solid #ffffff;
+}
