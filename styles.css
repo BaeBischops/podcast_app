@@ -304,7 +304,7 @@ header .play-menu .vol {
     background: #6969aa1a;
 }
 
-header .play-menu .vol bi{
+header .play-menu .vol .bi{
     position: absolute;
     color: #ffffff;
     font-size: 25px;
@@ -322,3 +322,12 @@ header .play-menu .vol input {
     transition: 3s linear;
     opacity: 0;
 }
+
+header .play-menu .vol .vol-bar {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: #36e2ec;
+    top: 0;
+}
+
