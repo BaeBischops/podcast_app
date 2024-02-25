@@ -519,3 +519,10 @@ header .podcast-menu .popular .h4-content .bi {
 header .podcast-menu .popular .h4-content .bi:hover {
     color: #ffffff;
 }
+
+header .podcast-menu .popular .pop-podcsst {
+    width: 100%;
+    height: 150px;
+    margin-top: 15px;
+    display: flex;
+}
