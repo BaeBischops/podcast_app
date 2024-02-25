@@ -547,3 +547,8 @@ header .podcast-menu .popular .pop-podcast li .img-play {
     align-items: center;
     justify-content: center;
 }
+
+header .podcast-menu .popular .pop-podcast li .img-play img {
+    width: 100%;
+    height: 100%;
+}
