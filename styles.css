@@ -296,3 +296,18 @@ header .play-menu .bar input {
     opacity: 0;
 }
 
+header .play-menu .vol {
+    position: relative;
+    width: 100px;
+    height: 2px;
+    margin-left: 50px;
+    background: #6969aa1a;
+}
+
+header .play-menu .vol bi{
+    position: absolute;
+    color: #ffffff;
+    font-size: 25px;
+    top: -17px;
+    left: -30px;
+}
