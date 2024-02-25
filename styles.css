@@ -385,3 +385,7 @@ header .podcast-menu nav ul li {
 header .podcast-menu nav ul li:hover {
     color: #ffffff;
 }
+
+header .podcast-menu nav ul li:nth-child(1) {
+    color: #ffffff;
+}
