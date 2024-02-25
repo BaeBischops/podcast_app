@@ -205,3 +205,15 @@ header .play-menu img {
     height: 35px;
     width: 35px;
 }
+
+header .play-menu h5 {
+    width: 130px;
+    font-size: 13px;
+    margin-left: 15px;
+    line-height: 15px;
+}
+
+header .play-menu h5 .subtitle {
+    font-family: 11px;
+    color: #4c5262;
+}
