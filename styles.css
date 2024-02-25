@@ -418,3 +418,8 @@ header .podcast-menu nav .search::before {
     backdrop-filter: blur(5px);
     z-index: -1;
 }
+
+header .podcast-menu nav .search .bi {
+    font-size: 13px;
+    padding: 3px 0 0 10px;
+}
