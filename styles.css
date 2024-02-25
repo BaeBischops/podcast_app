@@ -495,3 +495,12 @@ header .podcast-menu .content .buttons button:nth-child(2):hover {
     background: #36e2ec;
     color: #ffffff;
 }
+
+header .podcast-menu .popular {
+    width: 90%;
+    height: auto;
+    border: 1px solid #ffffff;
+    margin: auto;
+    margin-top: 15px;
+}
+
