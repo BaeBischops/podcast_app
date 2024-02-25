@@ -371,3 +371,14 @@ header .podcast-menu nav {
 header .podcast-menu nav ul{
     display: flex;
 }
+
+header .podcast-menu nav ul li {
+    position: relative;
+    list-style: none;
+    font-size: 13px;
+    color: #4c5262;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
