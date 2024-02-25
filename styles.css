@@ -509,3 +509,13 @@ header .podcast-menu .popular .h4-content {
     align-items: center;
     justify-content: space-between;
 }
+
+header .podcast-menu .popular .h4-content .bi {
+    color: #a4a8b4;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+header .podcast-menu .popular .h4-content .bi:hover {
+    color: #ffffff;
+}
