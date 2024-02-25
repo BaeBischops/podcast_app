@@ -171,7 +171,6 @@ header .play-menu {
 header .play-menu .wave {
     width: 30px;
     height: 30px;
-    border: 1px solid #ffffff;
     padding: 5px;
     display: flex;
     align-items: flex-end;
