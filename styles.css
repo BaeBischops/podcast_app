@@ -357,3 +357,13 @@ header .play-menu .vol .dot::before {
 header .podcast-menu {
     z-index: 2;
 }
+
+header .podcast-menu nav {
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
