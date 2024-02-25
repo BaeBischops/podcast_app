@@ -453,3 +453,6 @@ header .podcast-menu .content p {
     margin: 5px;
 }
 
+header .podcast-menu .content .buttons {
+    margin-top: 15px;
+}
