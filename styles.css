@@ -353,3 +353,7 @@ header .play-menu .vol .dot::before {
     top: -6px;
     box-shadow: inset 0 0 3px #36e2ec;
 }
+
+header .podcast-menu {
+    z-index: 2;
+}
