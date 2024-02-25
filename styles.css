@@ -358,6 +358,15 @@ header .podcast-menu {
     z-index: 2;
 }
 
+header .podcast-menu::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    /* background: url('src/img/img.jpg'); */
+    z-index: -1;
+}
+
 header .podcast-menu nav {
     width: 90%;
     height: 10%;
@@ -437,7 +446,7 @@ header .podcast-menu .content {
     width: 90%;
     height: 30%;
     margin: auto;
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
     padding-top: 20px;
 }
 
