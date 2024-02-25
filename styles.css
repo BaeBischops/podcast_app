@@ -311,3 +311,14 @@ header .play-menu .vol bi{
     top: -17px;
     left: -30px;
 }
+
+header .play-menu .vol input {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -10px;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: 3s linear;
+    opacity: 0;
+}
