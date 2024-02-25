@@ -399,3 +399,11 @@ header .podcast-menu nav ul li span {
     left: 0;
     border-radius: 20px;
 }
+
+header .podcast-menu nav .search {
+    position: relative;
+    width: 40%;
+    padding: 1px 10px;
+    border-radius: 20px;
+    color: #808080;
+}
