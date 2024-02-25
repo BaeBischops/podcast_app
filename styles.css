@@ -504,3 +504,8 @@ header .podcast-menu .popular {
     margin-top: 15px;
 }
 
+header .podcast-menu .popular .h4-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
