@@ -469,3 +469,8 @@ header .podcast-menu .content .buttons button {
     transition: .3s linear;
 }
 
+header .podcast-menu .content .buttons button:hover {
+    border: 2px solid #36e2ec;
+    background: none;
+    color: #36e2ec;
+}
