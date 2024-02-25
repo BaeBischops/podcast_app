@@ -433,16 +433,23 @@ header .podcast-menu nav .search input {
     font-size: 12px;
 }
 
-header .podcast-menu content {
+header .podcast-menu .content {
     width: 90%;
     height: 30%;
     margin: auto;
     border: 1px solid #ffffff;
-    padding: 20px;
+    padding-top: 20px;
 }
 
-header .podcast-menu content h1 {
+header .podcast-menu .content h1 {
     font-size: 25px;
     font-weight: 600;
+}
+
+header .podcast-menu .content p {
+    font-size: 11px;
+    font-weight: 400;
+    color: #4c5262;
+    margin: 5px;
 }
 
