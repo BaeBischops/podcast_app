@@ -456,3 +456,16 @@ header .podcast-menu .content p {
 header .podcast-menu .content .buttons {
     margin-top: 15px;
 }
+
+header .podcast-menu .content .buttons button {
+    width: 133px;
+    height: 30px;
+    border: 2px solid #36e2ec;
+    outline: none;
+    border-radius: 20px;
+    background: #5adae0;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
