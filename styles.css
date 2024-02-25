@@ -432,3 +432,12 @@ header .podcast-menu nav .search input {
     color: #ffffff;
     font-size: 12px;
 }
+
+header .podcast-menu content {
+    width: 90%;
+    height: 30%;
+    margin: auto;
+    border: 1px solid #ffffff;
+    padding: 20px;
+}
+
