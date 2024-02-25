@@ -382,3 +382,6 @@ header .podcast-menu nav ul li {
     transition: .3s linear;
 }
 
+header .podcast-menu nav ul li:hover {
+    color: #ffffff;
+}
