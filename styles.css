@@ -367,3 +367,7 @@ header .podcast-menu nav {
     align-items: center;
     justify-content: space-between;
 }
+
+header .podcast-menu nav ul{
+    display: flex;
+}
