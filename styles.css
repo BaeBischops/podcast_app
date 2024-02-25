@@ -441,3 +441,8 @@ header .podcast-menu content {
     padding: 20px;
 }
 
+header .podcast-menu content h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
