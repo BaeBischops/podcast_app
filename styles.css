@@ -615,6 +615,10 @@ header .podcast-menu .popular-genre .item {
     scroll-behavior: smooth;
 }
 
+header .podcast-menu .popular-genre .item::-webkit-scrollbar {
+    display: none;
+}
+
 header .podcast-menu .popular-genre .item li{
    list-style: none;
    position: relative;
