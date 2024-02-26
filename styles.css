@@ -581,3 +581,27 @@ header .podcast-menu .popular .pop-podcast li h5 .subtitle {
     font-size: 9px;
     color: #4c5262;
 }
+
+header .podcast-menu .popular-genre {
+    width: 90%;
+    height: auto;
+    /* border: 1px solid #ffffff; */
+    margin: auto;
+    margin-top: 15px;
+}
+
+header .podcast-menu .popular-genre .h4-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .podcast-menu .popular-genre .h4-content .bi {
+    color: #a4a8b4;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+header .podcast-menu .popular-genre .h4-content .bi:hover {
+    color: #ffffff;
+}
