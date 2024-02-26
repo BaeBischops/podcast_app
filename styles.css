@@ -525,6 +525,8 @@ header .podcast-menu .popular .pop-podcast {
     height: 150px;
     margin-top: 15px;
     display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 
 header .podcast-menu .popular .pop-podcast li {
