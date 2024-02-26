@@ -611,6 +611,8 @@ header .podcast-menu .popular-genre .item {
     height: auto;
     margin-top: 10px;
     display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 header .podcast-menu .popular-genre .item li{
