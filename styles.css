@@ -605,3 +605,11 @@ header .podcast-menu .popular-genre .h4-content .bi {
 header .podcast-menu .popular-genre .h4-content .bi:hover {
     color: #ffffff;
 }
+
+header .podcast-menu .popular-genre .item {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+}
+
