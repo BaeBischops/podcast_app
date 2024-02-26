@@ -613,3 +613,14 @@ header .podcast-menu .popular-genre .item {
     display: flex;
 }
 
+header .podcast-menu .popular-genre .item li{
+   list-style: none;
+   position: relative;
+   min-width: 60px;
+   height: 60px;
+   background: #ffffff;
+   border-radius: 50%;
+   margin-right: 20px;
+   cursor: pointer; 
+}
+
