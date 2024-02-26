@@ -559,5 +559,8 @@ header .podcast-menu .popular .pop-podcast li .img-play .bi {
     cursor: pointer;
     transition: .3s linear;
     opacity: 0;
+}
 
+header .podcast-menu .popular .pop-podcast li .img-play:hover .bi {
+    opacity: 1;
 }
