@@ -564,3 +564,9 @@ header .podcast-menu .popular .pop-podcast li .img-play .bi {
 header .podcast-menu .popular .pop-podcast li .img-play:hover .bi {
     opacity: 1;
 }
+
+header .podcast-menu .popular .pop-podcast li h5 {
+    padding: 5px 0 0 5px;
+    line-height: 15px;
+    font-size: 10px;
+}
