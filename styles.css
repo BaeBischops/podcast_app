@@ -570,3 +570,8 @@ header .podcast-menu .popular .pop-podcast li h5 {
     line-height: 15px;
     font-size: 10px;
 }
+
+header .podcast-menu .popular .pop-podcast li h5 .subtitle {
+    font-size: 9px;
+    color: #4c5262;
+}
