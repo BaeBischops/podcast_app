@@ -112,3 +112,11 @@ function fetchAndDisplaySeasons(id) {
   });
 }
 
+podcastList.addEventListener('click', function(event) {
+  const showId = event.target.dataset.id; // Adjusted to use "id"
+  if (showId) {
+      fetchAndDisplaySeasons(showId);
+  }
+
+  console.log(showId);
+});
