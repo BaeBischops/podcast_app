@@ -116,6 +116,13 @@ header .side-menu .song-menu {
     width: 100%;
     height: 63.4%;
     margin-top: 40px;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+header .side-menu .song-menu::-webkit-scrollbar {
+    display: none;
 }
 
 header .side-menu .song-menu li {
@@ -636,47 +643,3 @@ header .podcast-menu .popular-genre .item li img {
     border-radius: 50%;
     position: absolute;
 }
-
-/* For devices with a maximum width of 768px */
-@media screen and (max-width: 768px) {
-    /* Add your styles here */
-    body {
-        background-color: #000000;
-    }
-
-    header {
-        width: 100%;
-    }
-
-    header .side-menu, .podcast-menu {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    header .podcast-menu nav {
-        width: 100%;
-    }
-
-    header .podcast-menu .content, header .podcast-menu .popular, header .podcast-menu .popular-genre {
-        width: 100%;
-    }
-}
-
-/* For devices with a maximum width of 480px */
-@media screen and (max-width: 480px) {
-    /* Add your styles here */
-    header .side-menu .playlist {
-        margin-left: 10px;
-    }
-
-    header .side-menu .song-menu li img {
-        width: 25px;
-        height: 25px;
-    }
-
-    header .side-menu .song-menu li h5 {
-        font-size: 10px;
-    }
-}
-
